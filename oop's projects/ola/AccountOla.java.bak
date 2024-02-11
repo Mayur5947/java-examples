@@ -1,0 +1,14 @@
+class AccountOla 
+{
+	String name;
+	long cno;
+	char gender;
+	String email;
+    AccountOla(String name , long cno , char gender , String email)
+	{
+		this.name = name ;
+		this.cno = cno ;
+		this.gender = gender;
+		this.email = email ;
+	}
+}

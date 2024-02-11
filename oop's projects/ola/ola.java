@@ -1,0 +1,22 @@
+class ola 
+{
+	String from;
+	String to;
+	int km;
+	String name;
+	AccountOla a ;
+	ola(String from , String to , String name , int km)
+	{
+	  this.from = from;
+	  this.to = to;
+	  this.name = name;
+	  this.km = km;
+	}
+	ola()
+	{
+		
+	}
+	
+}
+
+

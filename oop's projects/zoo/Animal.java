@@ -1,0 +1,4 @@
+interface  Animal 
+{
+	public abstract void sound();
+}

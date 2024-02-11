@@ -1,0 +1,236 @@
+import java.util.Scanner;
+class hotel 
+{
+    hotel h;
+	int wallet = 0;
+	int order = 0;
+	Scanner sc = new Scanner(System.in);
+	int signup = 0;
+	AccountSwiggy a;
+	public void createAccount()
+	{
+		if(signup==0)
+		{
+		System.out.println("enter user name ");
+		String name  = sc.next();
+		System.out.println("enter user contact ");
+		int cno  = sc.nextInt();
+		System.out.println("enter user passsword ");
+		int pswd  = sc.nextInt();
+		System.out.println("enter user address ");
+		String add  = sc.nextLine();
+		 a = new AccountSwiggy(name , cno , pswd , add);
+		System.out.println("account is creted");
+		signup++;
+		}
+		else
+		{
+			System.out.println("u already created a account");
+		}
+
+
+	}
+	public void removeAccount()
+	{
+		if(signup!=0)
+		{
+			System.out.println("account removed");
+			a =null;
+			signup--;
+		}
+		else
+		{
+			System.out.println("create account first");
+		}
+	}
+	public void chooseHotel()
+	{
+		if(signup!=0)
+		{
+			if(wallet!=0)
+			{
+				order++;
+		System.out.println("1. veg 2.Non-veg");
+		int choice  = sc.nextInt();
+		switch(choice)
+		{
+			case 1 : h = new Veg();
+				break;
+			case 2 : h = new NonVeg();
+				break;
+		}
+		if(h instanceof Veg)
+		{
+			Veg v = (Veg)h;
+		    System.out.println("select any one 1.idli(price = 5rs) 2.dosa(price = 10rs)");
+		int c = sc.nextInt();
+		if(c==1)
+		{
+			System.out.println("select quantity");
+			v.qty1=sc.nextInt();
+			System.out.println("your bill is " + v.price1*v.qty1);
+			System.out.println(" 1. pay bill 2.cancel");
+			int pb = sc.nextInt();
+			switch(pb)
+			{
+				case 1 :
+				{
+					if(v.price1*v.qty1<wallet)
+						System.out.println("order palced");
+					else
+					{
+						
+						while(v.price1*v.qty1>wallet)
+						{
+						System.out.println("insuffiecient balance in u r wallet");
+						System.out.println("enter amount u want to add in wallet");
+				        wallet = wallet + sc.nextInt();
+						}
+						System.out.println("order placed succesfully");
+					}
+				}
+				break;
+				case 2 : return;
+			}
+		
+			
+		}
+		else
+		{
+			System.out.println("select quantity");
+			v.qty2=sc.nextInt();
+			System.out.println("your bill is " + v.price2*v.qty2);
+			System.out.println("1 . pay bill 2.cancel ");
+			int pb1 = sc.nextInt();
+			switch(pb1)
+			{
+				case 1 : 
+				{
+					if(v.price2*v.qty2<wallet)
+					   System.out.println("order palced");
+					else
+					{
+						while(v.price1*v.qty1>wallet)
+						{
+						System.out.println("insuffiecient balance in u r wallet");
+						System.out.println("enter amount u want to add in wallet");
+				        wallet = wallet + sc.nextInt();
+						}
+						System.out.println("order placed succesfully");
+					}
+
+				}
+				break;
+				case 2 : return;
+
+			}
+
+			
+			
+		}
+
+		}
+		else
+		{
+			NonVeg n = (NonVeg)h;
+			System.out.println("selec any one 1.chicken meal(price=200rs) 2.non veg soup(price=100rs)");
+		int c = sc.nextInt();
+		
+		if(c==1)
+		{
+			System.out.println("select quantity");
+			n.q1=sc.nextInt();
+			System.out.println("your bill is " + n.price1*n.q1);
+			System.out.println("1 . pay bill 2.cancel ");
+			int pb12 = sc.nextInt();
+			switch(pb12)
+			{
+				case 1 : 
+				{
+					if(n.price1*n.q1<wallet)
+					   System.out.println("order palced");
+					else
+					{
+						while(n.price1*n.q1>wallet)
+						{
+						System.out.println("insuffiecient balance in u r wallet");
+						System.out.println("enter amount u want to add in wallet");
+				        wallet = wallet + sc.nextInt();
+						}
+						System.out.println("order placed succesfully");
+					}
+
+				}
+				break;
+				case 2 : return;
+
+			}
+			
+		}
+		else
+		{
+			System.out.println("select quantity");
+			n.q2=sc.nextInt();
+			System.out.println("your bill is " + n.price2*n.q2);
+			System.out.println("1 . pay bill 2.cancel ");
+			int pb123 = sc.nextInt();
+			switch(pb123)
+			{
+				case 1 : 
+				{
+					if(n.price2*n.q2<wallet)
+					   System.out.println("order palced");
+					else
+					{
+						while(n.price2*n.q2>wallet)
+						{
+						System.out.println("insuffiecient balance in u r wallet");
+						System.out.println("enter amount u want to add in wallet");
+				        wallet = wallet + sc.nextInt();
+						}
+						System.out.println("order placed succesfully");
+					}
+
+				}
+				break;
+				case 2 : return;
+
+			}
+			
+			
+		}
+		}
+			}
+			else
+			{
+				System.out.println("add balance in u r wallet to order food");
+				System.out.println("enter amount u want to add in wallet");
+				wallet = sc.nextInt();
+			}
+		}
+		else
+		{
+			System.out.println("create account first");
+		}
+	}
+	public void cancelOrder()
+	{
+		if(signup!=0)
+		{
+			if(order!=0)
+		{
+			System.out.println("order cancelled");
+		}
+		else
+		{
+			System.out.println("first order something");
+		}
+		}
+		else
+		{
+			System.out.println("create account first");
+		}
+	}
+	
+	
+}

@@ -1,0 +1,7 @@
+class  cat extends Animal
+{
+	public void sound()
+	{
+		System.out.println("your gf's voice is like meowwwww meowwww >> >>>.>.");
+	}
+}
