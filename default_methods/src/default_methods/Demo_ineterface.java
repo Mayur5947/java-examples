@@ -6,4 +6,5 @@ public interface Demo_ineterface {
 	default void m2() {
 		System.out.println("it is an default method");
 	}
+	//default method does not affect the implementatio classes
 }
