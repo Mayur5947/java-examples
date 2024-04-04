@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Program3 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		;;
 		System.out.println("enter float  number ");
 		float f = Float.valueOf(scanner.nextLine());
 		if (f < 0)
